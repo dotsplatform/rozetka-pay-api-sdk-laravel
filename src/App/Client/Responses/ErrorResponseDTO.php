@@ -9,17 +9,45 @@ namespace Dots\RozetkaPay\App\Client\Responses;
 
 class ErrorResponseDTO extends RozetkaPayResponseDTO
 {
-    protected string $errCode;
+    protected string $code;
 
-    protected string $errText;
+    protected string $message;
 
-    public function getErrCode(): string
+    protected ?string $param;
+
+    protected ?string $payment_id;
+
+    protected ?string $type;
+
+    protected ?string $error_id;
+
+    public function getCode(): string
     {
-        return $this->errCode;
+        return $this->code;
     }
 
-    public function getErrText(): string
+    public function getMessage(): string
     {
-        return $this->errText;
+        return $this->message;
+    }
+
+    public function getParam(): ?string
+    {
+        return $this->param;
+    }
+
+    public function getPaymentId(): ?string
+    {
+        return $this->payment_id;
+    }
+
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function getErrorId(): ?string
+    {
+        return $this->error_id;
     }
 }

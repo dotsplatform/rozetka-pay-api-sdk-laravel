@@ -1,23 +1,23 @@
 <?php
 /**
- * Description of CreatePaymentRequest.php
+ * Description of PaymentInfoRequest.php
  * @copyright Copyright (c) DOTSPLATFORM, LLC
  * @author    Oleksandr Polosmak <o.polosmak@dotsplatform.com>
  */
 
 namespace Dots\RozetkaPay\App\Client\Requests\Payments;
 
-use Dots\RozetkaPay\App\Client\Requests\Payments\DTO\CreatePaymentRequestDTO;
+use Dots\RozetkaPay\App\Client\Requests\Payments\DTO\PaymentInfoRequestDTO;
 use Dots\RozetkaPay\App\Client\Requests\PostRozetkaPayRequest;
-use Dots\RozetkaPay\App\Client\Resources\Payment;
+use Dots\RozetkaPay\App\Client\Resources\PaymentInfo;
 use Saloon\Http\Response;
 
-class CreatePaymentRequest extends PostRozetkaPayRequest
+class PaymentInfoRequest extends PostRozetkaPayRequest
 {
-    public const ENDPOINT = '/api/payments/v1/new';
+    public const ENDPOINT = '/api/payments/v1/info';
 
     public function __construct(
-        private readonly CreatePaymentRequestDTO $dto,
+        private readonly PaymentInfoRequestDTO $dto,
     ) {
     }
 
@@ -31,8 +31,8 @@ class CreatePaymentRequest extends PostRozetkaPayRequest
         return self::ENDPOINT;
     }
 
-    public function createDtoFromResponse(Response $response): Payment
+    public function createDtoFromResponse(Response $response): PaymentInfo
     {
-        return Payment::fromArray($response->json());
+        return PaymentInfo::fromArray($response->json());
     }
 }

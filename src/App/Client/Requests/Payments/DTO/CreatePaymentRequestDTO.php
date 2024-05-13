@@ -32,7 +32,7 @@ class CreatePaymentRequestDTO extends DTO
 
     protected ?string $payload;
 
-    protected Customer $customer;
+    protected ?Customer $customer;
 
     protected ?array $products;
 
@@ -83,7 +83,7 @@ class CreatePaymentRequestDTO extends DTO
         return $this->payload;
     }
 
-    public function getCustomer(): Customer
+    public function getCustomer(): ?Customer
     {
         return $this->customer;
     }
