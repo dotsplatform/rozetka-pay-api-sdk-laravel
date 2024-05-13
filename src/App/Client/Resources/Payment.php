@@ -41,7 +41,7 @@ class Payment extends Entity
         return $this->external_id;
     }
 
-    public function isIsSuccess(): bool
+    public function isSuccess(): bool
     {
         return $this->is_success;
     }
