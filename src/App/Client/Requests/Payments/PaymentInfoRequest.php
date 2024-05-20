@@ -7,12 +7,13 @@
 
 namespace Dots\RozetkaPay\App\Client\Requests\Payments;
 
+use Dots\RozetkaPay\App\Client\Requests\BaseRozetkaPayRequest;
 use Dots\RozetkaPay\App\Client\Requests\Payments\DTO\PaymentInfoRequestDTO;
 use Dots\RozetkaPay\App\Client\Requests\PostRozetkaPayRequest;
 use Dots\RozetkaPay\App\Client\Resources\PaymentInfo;
 use Saloon\Http\Response;
 
-class PaymentInfoRequest extends PostRozetkaPayRequest
+class PaymentInfoRequest extends BaseRozetkaPayRequest
 {
     public const ENDPOINT = '/api/payments/v1/info';
 
@@ -21,7 +22,7 @@ class PaymentInfoRequest extends PostRozetkaPayRequest
     ) {
     }
 
-    protected function defaultBody(): array
+    protected function defaultQuery(): array
     {
         return $this->dto->toArray();
     }
