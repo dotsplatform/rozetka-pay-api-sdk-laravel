@@ -23,13 +23,13 @@ class Payment extends Entity
 
     protected bool $action_required;
 
-    protected float $amount;
+    protected ?float $amount;
 
     protected ?array $payment_method;
 
-    protected string $receipt_url;
+    protected ?string $receipt_url;
 
-    protected string $operation;
+    protected ?string $operation;
 
     public function getId(): string
     {
@@ -41,7 +41,7 @@ class Payment extends Entity
         return $this->external_id;
     }
 
-    public function isSuccess(): bool
+    public function isIsSuccess(): bool
     {
         return $this->is_success;
     }
@@ -61,7 +61,7 @@ class Payment extends Entity
         return $this->action_required;
     }
 
-    public function getAmount(): float
+    public function getAmount(): ?float
     {
         return $this->amount;
     }
@@ -71,12 +71,12 @@ class Payment extends Entity
         return $this->payment_method;
     }
 
-    public function getReceiptUrl(): string
+    public function getReceiptUrl(): ?string
     {
         return $this->receipt_url;
     }
 
-    public function getOperation(): string
+    public function getOperation(): ?string
     {
         return $this->operation;
     }
