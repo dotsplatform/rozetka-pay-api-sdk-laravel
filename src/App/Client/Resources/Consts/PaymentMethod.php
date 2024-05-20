@@ -12,4 +12,5 @@ enum PaymentMethod: string
     case AUTH = 'auth';
     case PURCHASE = 'purchase';
     case CAPTURE = 'capture';
+    case VOID = 'void';
 }
