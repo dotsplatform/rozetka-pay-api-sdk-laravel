@@ -11,7 +11,7 @@ use Dots\Data\Entity;
 
 class Payment extends Entity
 {
-    protected int $id;
+    protected string $id;
 
     protected string $external_id;
 
@@ -23,7 +23,7 @@ class Payment extends Entity
 
     protected bool $action_required;
 
-    protected int $amount;
+    protected float $amount;
 
     protected ?array $payment_method;
 
@@ -31,7 +31,7 @@ class Payment extends Entity
 
     protected string $operation;
 
-    public function getId(): int
+    public function getId(): string
     {
         return $this->id;
     }
@@ -61,7 +61,7 @@ class Payment extends Entity
         return $this->action_required;
     }
 
-    public function getAmount(): int
+    public function getAmount(): float
     {
         return $this->amount;
     }

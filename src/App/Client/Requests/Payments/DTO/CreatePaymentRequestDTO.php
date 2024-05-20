@@ -14,7 +14,7 @@ use Dots\RozetkaPay\App\Client\Resources\Customers\Customer;
 
 class CreatePaymentRequestDTO extends DTO
 {
-    protected int $amount;
+    protected float $amount;
 
     protected CurrencyCode $currency;
 
@@ -38,7 +38,7 @@ class CreatePaymentRequestDTO extends DTO
 
     protected ?array $recipient;
 
-    public function getAmount(): int
+    public function getAmount(): float
     {
         return $this->amount;
     }

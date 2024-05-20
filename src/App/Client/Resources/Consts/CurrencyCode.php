@@ -7,9 +7,9 @@
 
 namespace Dots\RozetkaPay\App\Client\Resources\Consts;
 
-enum CurrencyCode: int
+enum CurrencyCode: string
 {
-    case USD = 840;
-    case EUR = 978;
-    case UAH = 980;
+    case USD = 'USD';
+    case EUR = 'EUR';
+    case UAH = 'UAH';
 }

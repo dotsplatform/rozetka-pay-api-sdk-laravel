@@ -12,17 +12,17 @@ use Dots\RozetkaPay\App\Client\Resources\Customers\Customer;
 
 class PaymentInfo extends DTO
 {
-    protected int $id;
+    protected string $id;
 
     protected string $external_id;
 
-    protected int $amount;
+    protected float $amount;
 
-    protected int $amount_confirmed = 0;
+    protected float $amount_confirmed = 0;
 
-    protected int $amount_canceled = 0;
+    protected float $amount_canceled = 0;
 
-    protected int $amount_refunded = 0;
+    protected float $amount_refunded = 0;
 
     protected string $currency;
 
@@ -52,7 +52,7 @@ class PaymentInfo extends DTO
 
     protected ?Customer $customer;
 
-    public function getId(): int
+    public function getId(): string
     {
         return $this->id;
     }
@@ -62,22 +62,22 @@ class PaymentInfo extends DTO
         return $this->external_id;
     }
 
-    public function getAmount(): int
+    public function getAmount(): float
     {
         return $this->amount;
     }
 
-    public function getAmountConfirmed(): int
+    public function getAmountConfirmed(): float
     {
         return $this->amount_confirmed;
     }
 
-    public function getAmountCanceled(): int
+    public function getAmountCanceled(): float
     {
         return $this->amount_canceled;
     }
 
-    public function getAmountRefunded(): int
+    public function getAmountRefunded(): float
     {
         return $this->amount_refunded;
     }

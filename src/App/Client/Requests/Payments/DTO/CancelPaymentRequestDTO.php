@@ -14,7 +14,7 @@ class CancelPaymentRequestDTO extends DTO
 {
     protected string $external_id;
 
-    protected ?int $amount;
+    protected ?float $amount;
 
     protected ?CurrencyCode $currency;
 
@@ -27,7 +27,7 @@ class CancelPaymentRequestDTO extends DTO
         return $this->external_id;
     }
 
-    public function getAmount(): ?int
+    public function getAmount(): ?float
     {
         return $this->amount;
     }
