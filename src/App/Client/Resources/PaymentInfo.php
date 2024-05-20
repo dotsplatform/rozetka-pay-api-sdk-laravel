@@ -52,6 +52,19 @@ class PaymentInfo extends DTO
 
     protected ?Customer $customer;
 
+    public function getActualAmount(): float
+    {
+        if ($this->isConfirmed()) {
+            return $this->getAmountConfirmed();
+        } elseif ($this->isCanceled()) {
+            return $this->getAmountCanceled();
+        } elseif ($this->isRefunded()) {
+            return $this->getAmountRefunded();
+        } else {
+            return $this->getAmount();
+        }
+    }
+
     public function getId(): string
     {
         return $this->id;
