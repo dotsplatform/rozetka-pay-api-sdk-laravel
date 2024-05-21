@@ -31,6 +31,24 @@ class Payment extends Entity
 
     protected ?string $operation;
 
+    public function isOnHold(): bool
+    {
+        if (! $this->isSuccess()) {
+            return false;
+        }
+
+        return $this->getDetails()?->isOnHold() ?? false;
+    }
+
+    public function isCaptured(): bool
+    {
+        if (! $this->isSuccess()) {
+            return false;
+        }
+
+        return $this->getDetails()?->isCaptured() ?? false;
+    }
+
     public function getId(): string
     {
         return $this->id;
@@ -41,7 +59,7 @@ class Payment extends Entity
         return $this->external_id;
     }
 
-    public function isIsSuccess(): bool
+    public function isSuccess(): bool
     {
         return $this->is_success;
     }

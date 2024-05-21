@@ -50,6 +50,29 @@ class PaymentDetails extends DTO
 
     protected ?PaymentMethod $method;
 
+    public function isOnHold(): bool
+    {
+        if (! $this->getMethod()?->isAuth()) {
+            return false;
+        }
+
+        return $this->getStatus()?->isSuccess() ?? false;
+    }
+
+    public function isCaptured(): bool
+    {
+        if (! $this->getMethod()?->isCapture()) {
+            return false;
+        }
+
+        return $this->getStatus()?->isSuccess() ?? false;
+    }
+
+    public function isStatusFailure(): bool
+    {
+        return $this->getStatus()?->isFailure() ?? false;
+    }
+
     public function getAmount(): float
     {
         return $this->amount;
