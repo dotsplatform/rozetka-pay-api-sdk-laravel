@@ -23,8 +23,6 @@ class Payment extends Entity
 
     protected bool $action_required;
 
-    protected ?float $amount;
-
     protected ?array $payment_method;
 
     protected ?string $receipt_url;
@@ -81,7 +79,7 @@ class Payment extends Entity
 
     public function getAmount(): ?float
     {
-        return $this->amount;
+        return $this->getDetails()?->getAmount();
     }
 
     public function getPaymentMethod(): ?array
