@@ -42,9 +42,9 @@ class PaymentInfo extends DTO
 
     protected ?PaymentDetailsList $refund_details;
 
-    protected string $receipt_url;
+    protected ?string $receipt_url;
 
-    protected string $created_at;
+    protected ?string $created_at;
 
     protected bool $action_required;
 
@@ -140,12 +140,12 @@ class PaymentInfo extends DTO
         return $this->refund_details;
     }
 
-    public function getReceiptUrl(): string
+    public function getReceiptUrl(): ?string
     {
         return $this->receipt_url;
     }
 
-    public function getCreatedAt(): string
+    public function getCreatedAt(): ?string
     {
         return $this->created_at;
     }
