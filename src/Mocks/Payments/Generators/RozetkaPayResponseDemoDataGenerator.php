@@ -19,6 +19,7 @@ use Dots\RozetkaPay\App\Client\Resources\Customers\CustomerPaymentMethod;
 use Dots\RozetkaPay\App\Client\Resources\Payment;
 use Dots\RozetkaPay\App\Client\Resources\PaymentAction;
 use Dots\RozetkaPay\App\Client\Resources\PaymentDetails;
+use Dots\RozetkaPay\App\Client\Resources\PaymentDetailsList;
 use Dots\RozetkaPay\App\Client\Resources\PaymentFee;
 use Dots\RozetkaPay\App\Client\Resources\PaymentInfo;
 use Illuminate\Support\Str;
@@ -64,13 +65,13 @@ class RozetkaPayResponseDemoDataGenerator
             'amount_refunded' => 0,
             'currency' => 'UAH',
             'purchased' => true,
-            'purchase_details' => PaymentDetails::fromArray([$purchaseDetails->toArray()]),
+            'purchase_details' => PaymentDetailsList::fromArray([$purchaseDetails->toArray()]),
             'confirmed' => true,
-            'confirmation_details' => PaymentDetails::fromArray([$confirmationDetails]),
+            'confirmation_details' => PaymentDetailsList::fromArray([$confirmationDetails]),
             'canceled' => false,
-            'cancellation_details' => PaymentDetails::fromArray([$cancelDetails]),
+            'cancellation_details' => PaymentDetailsList::fromArray([$cancelDetails]),
             'refunded' => false,
-            'refund_details' => PaymentDetails::fromArray([$refundDetails]),
+            'refund_details' => PaymentDetailsList::fromArray([$refundDetails]),
             'receipt_url' => Str::uuid()->toString(),
             'created_at' => Str::uuid()->toString(),
             'action_required' => true,
