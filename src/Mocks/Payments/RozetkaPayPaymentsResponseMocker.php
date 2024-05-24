@@ -87,7 +87,7 @@ class RozetkaPayPaymentsResponseMocker
         return $data;
     }
 
-    public static function mockFailVoidPayment(array $data = []): array
+    public static function mockFailCancelPayment(array $data = []): array
     {
         $data = RozetkaPayResponseDemoDataGenerator::generateBadRequestResponse($data);
         MockClient::global([
